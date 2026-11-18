@@ -28,7 +28,7 @@ if(host){
 html=html.replace("</head>",sharing+"\n</head>");
 writeFileSync(htmlPath,html);
 writeFileSync(resolve(root,"dist/offer.js"),"window.BOOK_OFFER = Object.freeze("+JSON.stringify(offer,null,2)+");\n");
-for(const file of ["styles.css","page.js","offer.js","images/capa-profecias-2027.webp"]){
+for(const file of ["styles.css","page.js","offer.js","images/capa-profecias-2027.webp","images/retrato-profecias-2027.webp"]){
  if(!existsSync(resolve(root,"dist",file))) throw new Error("Arquivo ausente: "+file);
 }
 console.log("Página preparada. Valor: "+price+". "+offer.pages+" páginas. Sem login.");

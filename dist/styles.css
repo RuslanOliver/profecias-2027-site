@@ -21,3 +21,39 @@
   .footer-inner a{padding:8px}
 }
 @media(max-width:374px){.eyebrow{font-size:12px;letter-spacing:1px}}
+
+/* Retrato original: enquadramento do tronco para cima, com o livro visível. */
+.hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);grid-template-areas:"portrait copy";gap:64px;align-items:start}
+.hero-copy{padding:22px 0 0;min-width:0}
+.hero-portrait{grid-area:portrait;min-width:0;width:100%;max-width:460px;justify-self:center}
+.portrait-frame{position:relative;aspect-ratio:4/5;overflow:hidden;background:#fff;border:1px solid var(--gold);border-radius:8px;box-shadow:0 18px 46px rgba(0,0,0,.28)}
+.portrait-frame img{position:absolute;top:0;left:-28%;width:156%;max-width:none;height:auto}
+.hero-portrait figcaption{font-size:16px;line-height:1.5;text-align:center;margin-top:16px;color:var(--muted)}
+.hero-copy h1{font-size:clamp(56px,5.5vw,72px)}
+.final-box{grid-template-columns:190px minmax(0,1fr);align-items:start;gap:48px}
+.final-cover{padding:0}
+.final-cover img{width:100%;max-width:172px}
+.final-copy{min-width:0}
+@media(max-width:1100px) and (min-width:768px){
+  .hero-grid{gap:36px}
+  .hero-copy{padding-top:10px}
+  .hero-copy h1{font-size:56px}
+  .hero-lead{font-size:22px}
+  .price-line{gap:18px}
+  .hero-purchase .price{font-size:44px}
+  .price-caption{padding-left:18px}
+  .final-box{grid-template-columns:150px minmax(0,1fr);gap:30px}
+  .final-purchase{flex-wrap:wrap;gap:20px}
+}
+@media(max-width:767px){
+  .hero-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"title" "lead" "portrait" "purchase";gap:22px}
+  .hero-copy{display:contents}
+  .hero-copy h1{grid-area:title;font-size:clamp(48px,12vw,62px);margin:0}
+  .hero-lead{grid-area:lead;margin:0;font-size:23px}
+  .hero-portrait{max-width:360px}
+  .hero-portrait figcaption{margin-top:12px}
+  .hero-purchase{grid-area:purchase;margin:0;max-width:none;width:100%}
+  .final-box{grid-template-columns:minmax(0,1fr);gap:28px}
+  .final-cover{display:block;justify-self:center;width:140px}
+  .final-purchase{display:block}
+}
